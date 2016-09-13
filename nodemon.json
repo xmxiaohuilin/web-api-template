@@ -1,0 +1,13 @@
+{
+  "restartable": "rs",
+  "events": {
+    "restart": "npm run test:nodemon-restart-event $FILENAME"
+  },
+  "watch": [
+    "api/",
+    "config/",
+    "lib/",
+    "test/"
+  ],
+  "ext": "js json"
+}

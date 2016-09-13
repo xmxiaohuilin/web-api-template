@@ -1,0 +1,110 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "Web API with big data tool wrapper",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+
+  },
+  "keywords": [
+    "template",
+    "big data"
+  ],
+  "author": "Cindy",
+  "bugs": {
+    "url": "s"
+  },
+  "homepage": "",
+  "apiVersions": {
+    "v1": {
+      "uri": "/api/v1",
+      "version": "v1.0.0"
+    }
+  },
+  "nodeVersion": "6.2.1",
+  "scripts": {
+    "apidoc-swagger": "apidoc-swagger",
+    "ccel": "npm run curl:celery-routes",
+    "chrome": "bin/open_or_refresh_chrome",
+    "curl:celery-routes": "bin/get_celery_config_routes_json",
+    "cz": "git-cz",
+    "docs:jsdoc": "bin/generate_jsdocs",
+    "docs:swagger": "bin/generate_swagger",
+    "eslint": "eslint api config lib test",
+    "gdocs": "npm run docs:jsdoc",
+    "gswag": "npm run docs:swagger",
+    "jsdoc": "jsdoc",
+    "mocha": "mocha",
+    "node-inspector": "node-inspector",
+    "nodemon": "nodemon",
+    "postinstall": "npm run curl:celery-routes",
+    "start": "NODE_ENV=DEV nodemon -x 'node --harmony app.js'",
+    "start:debug": "bin/node_debug",
+    "start:debug-brk": "bin/node_debug_brk",
+    "test": "NODE_ENV=TEST mocha --harmony --recursive -r ./test/support/set_global_app_dirs.js -R spec || exit 0",
+    "testn": "NODE_ENV=TEST mocha --harmony --recursive -r ./test/support/set_global_app_dirs.js -R nyan || exit 0",
+    "testl": "NODE_ENV=TEST mocha --harmony --recursive -r ./test/support/set_global_app_dirs.js -R list || exit 0",
+    "test:jenkins-mocha": "NODE_ENV=TEST mocha --harmony --recursive -r ./test/support/set_global_app_dirs.js -R tap > ./jenkins/mocha_test_results.txt || exit 0",
+    "test:jenkins-junit": "NODE_ENV=TEST mocha --harmony --recursive -r ./test/support/set_global_app_dirs.js -R mocha-junit-reporter --reporter-options mochaFile=./jenkins/mocha_test_results.xml -C || exit 0",
+    "test:debug": "bin/mocha_debug",
+    "test:debug-brk": "bin/mocha_debug_brk",
+    "test:nodemon-restart-event": "bin/mocha_run_on_nodemon_restart",
+    "test:watch": "NODE_ENV=TEST nodemon -x 'echo Running in watch mode'"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/commitizen/config.js"
+    }
+  },
+  "dependencies": {
+    "bluebird": "3.4.1",
+    "body-parser": "1.15.1",
+    "cookie-parser": "1.4.3",
+    "dotenv": "2.0.0",
+    "elasticsearch": "11.0.1",
+    "express": "4.13.4",
+    "formidable": "1.0.17",
+    "git-rev": "^0.2.1",
+    "glob": "^7.0.5",
+    "jsonwebtoken": "7.0.1",
+    "kafka-node": "0.4.0",
+    "lodash": "4.13.1",
+    "mongoose": "4.4.19",
+    "node-celery": "0.2.6",
+    "node-geocoder": "^3.12.0",
+    "passport": "0.3.2",
+    "passport-facebook": "2.1.1",
+    "passport-google-oauth2": "0.1.6",
+    "passport-linkedin-oauth2": "1.4.1",
+    "winston": "2.2.0",
+    "winston-logstash": "0.2.11"
+  },
+  "devDependencies": {
+    "apidoc-swagger": "0.2.2",
+    "commitizen": "2.8.2",
+    "cz-customizable": "4.0.0",
+    "docdash": "0.4.0",
+    "eslint": "3.0.1",
+    "expect.js": "0.3.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-npm": "0.0.2",
+    "grunt-shipit": "^1.0.0",
+    "jsdoc": "3.4.0",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "2.5.3",
+    "mocha-junit-reporter": "1.11.1",
+    "nock": "8.0.0",
+    "node-inspector": "0.12.8",
+    "nodemon": "1.9.2",
+    "rewire": "2.5.1",
+    "shipit": "^1.0.2",
+    "shipit-deploy": "^2.2.0",
+    "sinon": "1.17.4",
+    "supertest": "1.2.0"
+  }
+}

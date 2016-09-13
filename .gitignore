@@ -1,0 +1,11 @@
+.DS_Store
+.env*
+.tag*
+.idea
+docs/docdash
+docs/swagger/*.json
+docs/swagger/*.json.old
+jenkins/*
+logs/*
+npm-debug.log*
+node_modules/*
