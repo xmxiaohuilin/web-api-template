@@ -19,6 +19,7 @@ This template contains a typical structure for node.js. In this template, we wra
     └── 'nock'        : HTTP interceptors to mock external HTTP requests
     └── 'supertest'   : HTTP request testing
 ```
+
 ## Project structure
 
 Below is a map of our whole folder structure and what files are stored where. Note
